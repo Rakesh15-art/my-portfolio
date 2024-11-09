@@ -1,0 +1,304 @@
+/*     NAVIGATION BAR    */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    background: rgba(11, 11, 11, 0.8);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #FFD700;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+}
+
+.hero-section {
+    background-image: url('images/home.jpg');
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 550px;
+}
+
+.intro-text {
+    font-size: 4rem;
+    font-family:josefin slab;
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    transform: translateY(-75px);
+}
+
+.letter {
+    display: inline-block;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(9, 9, 9);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+    letter-spacing: -10px;
+}
+
+.name-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.0s forwards;
+    animation-delay: 0.500s;
+    margin-top: -150px;
+}
+
+.dots {
+    opacity: 0;
+    animation: blinkDots 1.0s infinite step-start;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blinkDots {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+
+
+.skills-section {
+    background-image: url('images/skills.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 40px 20px;
+}
+
+.skills-section h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: rgb(255, 255, 255); /* Ensure the title is visible */
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 75px;
+    justify-items: center;
+    animation: revealSkills 1.5s ease-in-out forwards;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0; /* Start with opacity 0 for the animation */
+    transform: translateY(20px); /* Start from below */
+    animation: skillAppear 1s ease-in-out forwards;
+    transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.skill:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+}
+
+.skill img {
+    width: 100px; /* Adjust icon size */
+    height: auto;
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+.skill p {
+    font-family:'Gill Sans';
+    color: rgb(0, 0, 0); /* Ensure the text is visible */
+    font-size: 1.2rem; /* Adjust font size */
+}
+
+@keyframes revealSkills {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes skillAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+.projects-section {
+    background-image: url(images/projects.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    gap: 100px;
+    padding: 20px;
+}
+
+.project-box {
+    width: 200px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.project-image {
+    width: 80%;
+    height: auto;
+    position: relative;
+    top: -10%;
+    object-fit: cover;
+}
+
+.link-box {
+    width: 100%;
+    background-color: rgb(13, 13, 13);
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.link-box a {
+    color: #fafafa;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.link-box a:hover {
+    color: #007bff;
+}
+
+.contact-section {
+    background-image: url('images/contacts.png');
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.social-logo {
+    width: 50px;
+    height: auto;
+}
+
+.scroll-to-home {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-home:hover {
+    transform: scale(1.1);
+}
+
+.arrow-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-section {
+    background-color: #333;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.footer-section h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
